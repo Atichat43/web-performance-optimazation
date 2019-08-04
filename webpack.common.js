@@ -64,6 +64,12 @@ module.exports = webpackEnv => {
     },
     plugins: [
       new webpack.HotModuleReplacementPlugin(),
+      new webpack.DefinePlugin({
+        'process.env': {
+          NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'development'),
+          MapboxAccessToken: JSON.stringify(process.env.MapboxAccessToken),
+        }
+      }),
       new BundleAnalyzerPlugin({
         analyzerMode:'disabled', 
         generateStatsFile: true
