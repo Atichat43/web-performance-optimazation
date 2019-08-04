@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "analyze": "webpack-bundle-analyzer dist/stats.json",
-    "build": "rm -rf dist/*; webpack --mode production",
-    "start": "webpack-dev-server --mode development --hot --open --progress ",
+    "build": "rm -rf dist/*; webpack --config webpack.prod.js --mode production",
+    "start": "webpack-dev-server --config webpack.dev.js --mode development --hot --open --progress ",
     "start-prod": "http-server ./dist -p 8080 -o",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -30,10 +30,12 @@
     "http-server": "^0.11.1",
     "mini-css-extract-plugin": "^0.8.0",
     "node-sass": "^4.12.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
     "postcss-flexbugs-fixes": "^4.1.0",
     "postcss-loader": "^3.0.0",
     "postcss-preset-env": "^6.7.0",
     "sass-loader": "^7.1.0",
+    "terser-webpack-plugin": "^1.4.1",
     "webpack": "^4.39.1",
     "webpack-bundle-analyzer": "^3.4.1",
     "webpack-cli": "^3.3.6",
@@ -43,6 +45,7 @@
     "date-fns": "^1.30.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "recharts": "^1.6.2"
+    "recharts": "^1.6.2",
+    "webpack-merge": "^4.2.1"
   }
 }
