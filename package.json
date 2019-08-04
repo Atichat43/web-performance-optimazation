@@ -1,0 +1,25 @@
+{
+  "name": "web-performance-optimazation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Atichat43/web-performance-optimazation.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Atichat43/web-performance-optimazation/issues"
+  },
+  "homepage": "https://github.com/Atichat43/web-performance-optimazation#readme",
+  "devDependencies": {
+    "http-server": "^0.11.1",
+    "webpack": "^4.39.1",
+    "webpack-bundle-analyzer": "^3.4.1",
+    "webpack-cli": "^3.3.6"
+  }
+}
