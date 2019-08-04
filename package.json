@@ -4,6 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "analyze": "webpack-bundle-analyzer dist/stats.json",
+    "build": "rm -rf dist/*; webpack --mode production",
+    "start": "webpack-dev-server --mode development --hot --open --progress ",
+    "start-prod": "http-server ./dist -p 8080 -o",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,9 +21,19 @@
   },
   "homepage": "https://github.com/Atichat43/web-performance-optimazation#readme",
   "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.6",
+    "html-webpack-plugin": "^3.2.0",
     "http-server": "^0.11.1",
     "webpack": "^4.39.1",
     "webpack-bundle-analyzer": "^3.4.1",
-    "webpack-cli": "^3.3.6"
+    "webpack-cli": "^3.3.6",
+    "webpack-dev-server": "^3.7.2"
+  },
+  "dependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
   }
 }
