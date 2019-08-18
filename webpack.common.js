@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
 
 module.exports = webpackEnv => {
   const isEnvDevelopment = webpackEnv === 'development';
@@ -90,6 +91,9 @@ module.exports = webpackEnv => {
         filename: 'style.[hash].css',
         chunkFilename: '[name].[hash].css'
       }),
-    ]
+      new LodashModuleReplacementPlugin({
+        shorthands: true
+      }),
+    ].filter(Boolean)
   }
 };
