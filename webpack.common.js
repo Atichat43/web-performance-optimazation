@@ -27,7 +27,14 @@ module.exports = webpackEnv => {
         {
           test: /\.(css|scss)$/,
           use: [
-            MiniCssExtractPlugin.loader,
+            isEnvDevelopment ? {
+              loader: 'style-loader',
+              options: {
+                sourceMap: true,
+              },
+            } : {
+              loader: MiniCssExtractPlugin.loader,
+            },
             {
               loader: 'css-loader',
               options: {
